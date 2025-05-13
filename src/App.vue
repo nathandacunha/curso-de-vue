@@ -51,6 +51,15 @@
       <div v-if = "somaMaiorQue10">
         <p>A soma é maior que que 10</p>
       </div>
+      <div v-else>
+        <p>A soma é menor que 10</p>
+      </div>
+      <div v-if = "somaPar">
+        <p>A soma é par</p>
+      </div>
+      <div v-else>
+        <p>A soma é impar</p>
+      </div>
     </div>
   </div>
 
