@@ -1,5 +1,5 @@
 <script setup>
-  import { computed, computed} from 'vue'
+  import { computed, ref} from 'vue'
 
   const contador1 = ref(0)
   const contador2 = ref(0)
@@ -29,22 +29,32 @@
   <h1>
     correção dos exercicios
   </h1>
-
-  <div class="info">
-    <h2>
-      informações
-    </h2>
-    <p>Nome: {{  nome  }}</p>
-    <p>Idade: {{ idade }} anos</p>
-    <hr>
-    <p>
-      Para completar 50 anos faltam: {{ 50 - idade }} anos
-    </p>
-
-    <p>
-      O nome invertido em maisculo é: {{ inverterTextoEmMaiusculo(nome) }}
-    </p>
+  <div class="booleano">
+    <button @click="valorBooleano = !valorBooleano" > {{ valorBooleano ? 'Esconder Resultado' : 'Mostrar Resultado' }}</button>
   </div>
+  <div v-if = "valorBooleano">
+    <div class="contador">
+      <h2>Contador 1</h2>
+      <button @click = "incrementar('contador1')">Incrementar</button>
+      <button @click = "decrementar('contador1')">Decrementar</button>
+      <p>Valor: {{ contador1 }}</p>
+    </div>
+    <div class="contador">
+      <h2>Contador 2</h2>
+      <button @click="incrementar('contador2')">Incrementar</button>
+      <button @click = "decrementar('contador2')">Decrementar</button>
+      <p>Valor: </p>
+    </div>
+    <div class="soma">
+      <h2>Soma</h2>
+      <p>Valor: {{ soma }}</p>
+      <div v-if = "somaMaiorQue10">
+        <p>A soma é maior que que 10</p>
+      </div>
+    </div>
+  </div>
+
+  
 
 </template>
 
