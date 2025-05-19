@@ -6,13 +6,10 @@
 <template>
   <div>
     <Card>
-      <p>Body</p>
       <template #header>
         <h1>Header</h1>
       </template>
-      <template #footer>
-        <p>Footer</p>
-      </template>
+      <p>Body</p>
     </Card>
   </div>
 </template>

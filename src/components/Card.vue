@@ -3,16 +3,21 @@
 </script>
 
 <template>
+
     <div class="card">
-        <div class="header">
-            <slot name = "header"></slot>
+        <div v-if = "$slots.header" class = "header">
+            <slot name = "header" />
         </div>
+
         <div class="body">
-            <slot></slot>
+            <slot>
+                <p>Conteúdo padrão do card</p>
+            </slot>
         </div>
-        <div class="footer">
-            <slot name = "footer"></slot>
-        </div>
+    </div>
+
+    <div v-if = "$slots.footer" class="footer">
+        <slot name="footer" />
     </div>
     
 </template>
