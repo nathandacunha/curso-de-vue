@@ -1,13 +1,18 @@
 <script setup>
-  import ExpandBox from './components/ExpandBox.vue'
+  import Card from './components/Card.vue'
 
-  const title = 'Titulo da caixa expansão';
-  const qtde = 2;
 </script>
 
 <template>
-
   <div>
-    <expand-box :title = "title" :qtde = "obj.qtde" />
+    <Card>
+      <p>Body</p>
+      <template #header>
+        <h1>Header</h1>
+      </template>
+      <template #footer>
+        <p>Footer</p>
+      </template>
+    </Card>
   </div>
 </template>
